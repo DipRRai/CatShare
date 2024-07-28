@@ -19,27 +19,29 @@ include("database.php");
     </nav>
     <header class="header">
         <h1>Check out some cool cat submissions in the database!</h1>
+        <h1>Upload Photo</h1>
+        <form action="index.php" method="post" enctype="multipart/form-data">
+            <label for="username">Your Name:</label>
+            <input type="text" name="username">
+            <label for="photo">Select photo to upload:</label>
+            <input type="file" name="photo" id="photo" accept=".png, .jpg, .jpeg, .gif" required><br>
+            <input type="submit" value="Upload Photo" name="submit"><br>
+        </form>
     </header>
-    <h1>Upload Photo</h1>
-    <form action="index.php" method="post" enctype="multipart/form-data">
-        <label for="username">Your Name:</label>
-        <input type="text" name="username"><br>
-        <label for="photo">Select photo to upload:</label>
-        <input type="file" name="photo" id="photo" required><br>
-        <input type="submit" value="Upload Photo" name="submit"><br>
-    </form>
-    <?php
-    $query = "SELECT * FROM users";
-    $result = mysqli_query($conn, $query);
-    while ($row = mysqli_fetch_assoc($result)) {
-        echo "<div class='card'>
-                <img src='Images/{$row['photo']}' alt='{$row['name']}' class='card-img-top'>
-                <div class='card-body'>
-                    <h5 class='card-title'>{$row['name']}</h5>
-                </div>
+    <div class="photo-container">
+        <?php
+        $query = "SELECT * FROM users";
+        $result = mysqli_query($conn, $query);
+        while ($row = mysqli_fetch_assoc($result)) {
+            echo "<div class='card'>
+                <img src='Images/{$row['photo']}' alt='{$row['name']}' class='cat-img'>
+                <h5 class='card-title'>Image by: {$row['name']}</h5>
+                <p>uploaded on  {$row['created_at']}</p>
             </div>";
-    }
-    ?>
+        }
+        ?>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 

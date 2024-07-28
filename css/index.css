@@ -1,3 +1,32 @@
+body{
+    margin: 0;
+}
 header {
     text-align: center;
+}
+.photo-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows the items to wrap onto multiple lines */
+    gap: 20px; /* Optional: Adds space between the items */
+    justify-content: center; /* Centers items horizontally */
+    margin: 50px 0px;
+}
+
+.card {
+    width: 25%; /* Adjust the width to fit the container with a gap */
+    height: auto;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.cat-img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    object-fit: cover;
+    margin-bottom: 10px;
 }
