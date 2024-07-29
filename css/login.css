@@ -1,0 +1,10 @@
+.login_body {
+    margin: 10% 0%;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+.form_component{
+    margin: 10px 0;
+}

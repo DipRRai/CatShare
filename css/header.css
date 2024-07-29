@@ -1,0 +1,16 @@
+.navigation_css{
+    display: flex;
+    height : 50px;
+}
+.nav_text{
+    text-align: center;
+}
+.nav_component_css_title{
+    flex-grow: 1;
+}
+.nav_component_css_login_register{
+    flex-grow: 1;
+}
+.nav_spacer{
+    flex-grow: 9;
+}
